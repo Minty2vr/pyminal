@@ -1,6 +1,6 @@
 # Welcome!
 
->[note!]
+>[!note]
 >please note this tool is still WIP exspect bugs and unfinished features
 
 pyminal A.K.A python terminal
