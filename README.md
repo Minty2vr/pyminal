@@ -10,4 +10,5 @@ to navigate simply type where you wanna go.
 for example if you have a calculator package type `calculator` in the home directory
 
 ## Set up
->[]
+>[!note]
+>set up process is not yet finalized
