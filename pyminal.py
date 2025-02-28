@@ -5,16 +5,16 @@ version = "0.0.1"
 
 #opperations begin here
 print(f"""                       _             _   
- _ __  _   _ _ __ ___ (_)_ __   __ _| |           
+ _ __  _   _ _ __ ___ (_)_ __   __ _| |            
 | '_ \| | | | '_ ` _ \| | '_ \ / _` | |            
 | |_) | |_| | | | | | | | | | | (_| | |            
 | .__/ \__, |_| |_| |_|_|_| |_|\__,_|_|            
 |_|    |___/                                       
                                                    
+version, {version}                                 
 the python based terminal                          
 made by minty2                                     
                                                    
-version, {version}                                 
 for first time users type 'initialize'             
 for help type 'help'                               
 for a list of installed packages type 'pkgs'       
@@ -53,10 +53,21 @@ the home directory. or visit
     elif userInput.lower() == 'help':
         print("""for help about pyminal visit 
 'https://github.com/Minty2vr/pyminal'""")
-        print("commands")
-        with open ('pyminal_packages.txt', 'r') as file:
-            print(file.readline())
+        print("commands:")
+        print("")
+        with open('pyminal_packages.txt', 'r') as file:
+            for line in file:
+                print(line.strip())
+    
+    elif userInput.lower() == 'run/':
+        dir = "home/run/"
+        if userInput.lower() == 'calculator':
+            pass
+        else:
+            print(userInput,"is not a executable program")
 
+    elif userInput.lower() == 'home/':
+        dir = "home/"
 
     else:
         print(f"Error 01: {userInput} not a command")
