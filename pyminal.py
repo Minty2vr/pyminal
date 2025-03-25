@@ -1,4 +1,8 @@
 import os
+import cmd
+import sys
+import datetime
+import time
 
 dir = "home/"
 version = "0.0.1"
@@ -25,49 +29,7 @@ you should be able to see the cursor below
 adjust in order to the the cursor                  
 ___________________________________________________
 """)
-while True: 
-    userInput = input(dir)
-    
-    if userInput.lower() == 'initialize': #the function for making the file that has the list of commands
-        print("")
-        print("please wait while pyminal gets set up...")
-        
-        with open ('pyminal_packages.txt', 'w+') as file:
-            print("package handling created")
-        
-        print("")
-        print("Hello!")
-        print("""Welcome to pyminal.
-this is a termial built entirely within python.
-to navigate type where you want to go! for example
-if you have a calculator package hooked type
-'calculator' in the home directory
 
-for more info or you just need help type 'help' in
-the home directory. or visit 
-'https://github.com/Minty2vr/pyminal' 
-""")
-    elif userInput.lower() == 'clear':
-         os.system('cls' if os.name == 'nt' else 'clear')
-
-    elif userInput.lower() == 'help':
-        print("""for help about pyminal visit 
-'https://github.com/Minty2vr/pyminal'""")
-        print("commands:")
-        print("")
-        with open('pyminal_packages.txt', 'r') as file:
-            for line in file:
-                print(line.strip())
-    
-    elif userInput.lower() == 'run/':
-        dir = "home/run/"
-        if userInput.lower() == 'calculator':
-            pass
-        else:
-            print(userInput,"is not a executable program")
-
-    elif userInput.lower() == 'home/':
-        dir = "home/"
-
-    else:
-        print(f"Error 01: {userInput} not a command")
+class Pyminnal(cmd.Cmd):
+    prompt = 'dir'
+    file = None
