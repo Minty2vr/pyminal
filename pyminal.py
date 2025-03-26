@@ -1,8 +1,8 @@
-import os
 import cmd
-import sys
 import datetime
 import time
+import subprocess
+#thats a lot of imports O.O
 
 dir = "home/"
 version = "0.0.1"
@@ -19,11 +19,11 @@ version, {version}
 the python based terminal                          
 made by minty2                                     
                                                    
-for first time users type 'initialize'             
 for help type 'help'                               
-for a list of installed packages type 'pkgs'       
-remember to never run anything from an untrested   
-source                                             
+       
+for first time users type 'tutorial'
+
+
                                                    
 you should be able to see the cursor below         
 adjust in order to the the cursor                  
@@ -50,6 +50,15 @@ class Pyminnal(cmd.Cmd):
         '''prints todays date'''
         now = datetime.datetime.now()
         print(now.strftime('today is %A, %B %d %Y, %I:%M%p'))
-    
+
+    def do_open(self, fileToRun):
+        '''runs the specified file. case sensitive. 
+only opens files in the "pyminal" folder'''
+        subprocess.run(["python", fileToRun])
+
+    def do_tutorial(self, line):
+        '''opens the tutorial file that came with pyminal'''
+        subprocess.run(["python", "tutorial.py"])
+
 if __name__ == '__main__':
     Pyminnal().cmdloop()
