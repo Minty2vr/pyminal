@@ -5,7 +5,7 @@ import subprocess
 #thats a lot of imports O.O
 
 dir = "home/"
-version = "0.0.1"
+version = "0.1.0"
 
 #opperations begin here
 print(f"""                       _             _   
