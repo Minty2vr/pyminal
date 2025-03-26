@@ -31,5 +31,25 @@ ___________________________________________________
 """)
 
 class Pyminnal(cmd.Cmd):
-    prompt = 'dir'
+    prompt = dir
     file = None
+
+    def do_hello(self, line):
+        '''tests the print function and make sures things workey'''
+        print("Hello, World!") #prints 'Hello, World!' as a test
+
+    def do_help(self, arg):
+        '''lists commmands and what they do'''
+        return super().do_help(arg)
+
+    def do_quit(self, line):
+        '''closes pyminal'''
+        return True #exits Py-Cal
+    
+    def do_today(self, line):
+        '''prints todays date'''
+        now = datetime.datetime.now()
+        print(now.strftime('today is %A, %B %d %Y, %I:%M%p'))
+    
+if __name__ == '__main__':
+    Pyminnal().cmdloop()
