@@ -6,8 +6,8 @@
 
 pyminal A.K.A python terminal
 is a python based terminal running directly in your IDE!
-to navigate simply type where you wanna go.
-for example if you have a calculator package type `calculator` in the home directory
+for first time users its best to go to the tutorial
+simply type 'tutorial' and you're off!
 
 ## Set up
 >[!note]
