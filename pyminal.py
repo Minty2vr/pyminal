@@ -2,10 +2,11 @@ import cmd
 import datetime
 import time
 import subprocess
+import os
 #thats a lot of imports O.O
 
 dir = "home/"
-version = "0.1.0"
+version = "0.0.1"
 
 #opperations begin here
 print(f"""                       _             _   
@@ -59,6 +60,10 @@ only opens files in the "pyminal" folder'''
     def do_tutorial(self, line):
         '''opens the tutorial file that came with pyminal'''
         subprocess.run(["python", "tutorial.py"])
+
+    def do_clear(self, line):
+        '''clears the terminal'''
+        os.system('cls' if os.name == 'nt' else 'clear')
 
 if __name__ == '__main__':
     Pyminnal().cmdloop()
